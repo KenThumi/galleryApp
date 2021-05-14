@@ -2,4 +2,55 @@
 
 {% block content %}
 {{block.super}}
+
+<div class="container-fluid my-2">
+   <div class="row">
+       <div class="col-12">
+        <h4>Location</h4>
+        <hr>
+       </div>
+      
+       <div class="col-md-4">
+                <div class="card mb-3" style="width: 100%;">
+                    <img class="img-fluid" data-toggle="modal" data-target="#modal-id"  src="https://res.cloudinary.com/dtw9t2dom/image/upload/v1620304410/tree_yekbkx.jpg" alt="lorem">
+                    <div class="card-body">
+                        <h4>Title</h4>
+                
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <a href="#">
+                                        <span class="text-center">
+                                            Edit<i class="fas fa-edit ml-1"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <a href="#"  data-toggle="modal" data-target="#modal-id" >
+                                    <span class="text-center">
+                                        More..  <i class="fas fa-expand-arrows-alt"></i>
+                                    </span>
+                                </a>
+                              
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <span class="text-center">
+                                        Delete <i class="fas fa-trash-alt ml-1"></i>
+                                    </span>
+                                </a>
+                               
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            {% include '_image_modal.html' %}
+       </div>
+     
+      
+   </div>
+</div>
 {% endblock %}
