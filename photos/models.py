@@ -16,6 +16,19 @@ class Image(models.Model):
     def save_image(self):
         return self.save()
 
+    @classmethod
+    def update_image(cls,update_details,id):
+        return cls.objects.filter(id=int(id)).update(image=update_details['image'],
+                                               name=update_details['name'],
+                                               description=update_details['description'],
+                                               category=update_details['category'],
+                                               location=update_details['location'])
+        # image = Image(image=new_result if new_result else image.image,
+            #                 name=form.cleaned_data['name'],
+            #                 description=form.cleaned_data['description'],
+            #                 category=form.cleaned_data['category'],
+            #                 location = form.cleaned_data['location'] )
+
     def __str__(self):
         return f'Image: {self.name}'
 

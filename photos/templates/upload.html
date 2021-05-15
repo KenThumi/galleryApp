@@ -4,10 +4,28 @@
 {% block content %}
 {{block.super}}
       <div class="container my-2">
+
             <h4 class="text-center">
                 Upload an Image
                 <hr>
             </h4>
+                  <!-- flash msgs -->
+            {% if messages %}
+            <div class="col-12">
+             
+             {% for msg in messages %}
+               <div class="alert alert-danger alert-dismissable">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                 {{msg.message}}
+               </div>
+             {% endfor %}
+           
+            </div>
+             {% endif %}
+
+
+
+
             <div class="md-block mx-auto" style="width: 70%;">
                 <div>
                     <form method="POST" enctype="multipart/form-data">
