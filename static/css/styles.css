@@ -2,15 +2,15 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #D4AFB2;
+    background: #DBBDBF;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
+    /* font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: #999; */
 }
 
 a,
@@ -200,6 +200,7 @@ a.article:hover {
 
 img{
     cursor: pointer;
+    height: 250px !important;
 }
 
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Image
 from .forms import ImageForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,6 +24,7 @@ def upload(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Successful upload.')
             return redirect('home')
 
 

@@ -5,9 +5,14 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 class Image(models.Model):
-    image = CloudinaryField('image')
+    
     name = models.CharField(max_length=60)
     description = models.TextField()
+    image = CloudinaryField('image')
+
+
+    def save_image():
+        pass
 
     def __str__(self):
         return f'Image: {self.name}'
