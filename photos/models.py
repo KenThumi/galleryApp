@@ -11,8 +11,8 @@ class Image(models.Model):
     image = CloudinaryField('image')
 
 
-    def save_image():
-        pass
+    def save_image(self):
+        return self.save()
 
     def __str__(self):
         return f'Image: {self.name}'
