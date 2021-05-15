@@ -13,7 +13,7 @@
            </a>
        </div>
        <div class="col-12">
-        <h4>Location</h4>
+        <!-- <h4>Location</h4> -->
         <hr>
        </div>
 
@@ -70,6 +70,13 @@
             </div>
             {% include '_image_modal.html' %}
        </div>
+     {%empty%}
+     <div class="text-center">
+         
+                No records
+            
+     </div>
+          
      {%endfor%}
       
    </div>
