@@ -1,8 +1,16 @@
 {%extends 'base.html'%}
-
+{% load cloudinary %}
 {% block content %}
 {{block.super}}
-      <h4>
-          here we go
-      </h4>
+      <div class="container">
+            <div class="md-block mx-auto" style="width: 70%;">
+                <div>
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {{ form }}
+                      <input type="submit" value="Upload">
+                    </form>
+                  </div> 
+            </div>
+      </div>
 {% endblock %}
