@@ -30,7 +30,12 @@ def upload(request):
             upload_result = cloudinary.uploader.upload(file_to_upload)
             new_result = remove_prefix(upload_result['secure_url'],'https://res.cloudinary.com/dtw9t2dom/')
 
-            image = Image(image=new_result,name=form.cleaned_data['name'],description=form.cleaned_data['description'])
+            image = Image(image=new_result,
+                          name=form.cleaned_data['name'],
+                          description=form.cleaned_data['description'],
+                          category=form.cleaned_data['category'],
+                          location = form.cleaned_data['location'])
+
             image.save_image()
 
             messages.success(request, 'Successful upload.')

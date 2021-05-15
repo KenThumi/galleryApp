@@ -6,8 +6,8 @@
             <img class="img-fluid" src="{{image.image.url}}" alt="lorem">
             <div class="card-body">
                 <h4>{{image.name|title}}</h4>
-                <p>Category: <strong>Lorem</strong></p>
-                <p>Location: <strong>Lorem</strong></p>  
+                <p>Category: <strong>{{image.category | title}}</strong></p>
+                <p>Location: <strong>{{image.location | title}}</strong></p>  
                 <p>
                   {{image.description}}
                 </p>
