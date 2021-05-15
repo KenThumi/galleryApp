@@ -23,11 +23,17 @@ class Image(models.Model):
                                                description=update_details['description'],
                                                category=update_details['category'],
                                                location=update_details['location'])
-        # image = Image(image=new_result if new_result else image.image,
-            #                 name=form.cleaned_data['name'],
-            #                 description=form.cleaned_data['description'],
-            #                 category=form.cleaned_data['category'],
-            #                 location = form.cleaned_data['location'] )
+    
+    @classmethod
+    def search_category(cls,category):
+        try:
+            #results = cls.objects.get(category__name__icontains=category)
+            results = cls.objects.all().filter(category__name__icontains=category)
+        except:
+            results=''
+
+        return results
+
 
     def __str__(self):
         return f'Image: {self.name}'

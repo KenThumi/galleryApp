@@ -90,3 +90,21 @@ def edit(request,image_id):
     ctx = {'form':form}
 
     return render(request,'upload.html',ctx)
+
+
+
+def search_category(request):
+    # pass  #__contains
+    if request.method=='POST':
+
+        needle = request.POST['search']
+
+        images=Image.search_category(needle)
+
+        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})'}
+
+    
+        return render(request,'index.html', ctx)
+
+    return redirect('home')
+

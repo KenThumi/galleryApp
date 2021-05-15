@@ -17,7 +17,7 @@
         <hr>
        </div>
 
-
+       <!-- flash messages -->
        {% if messages %}
        <div class="col-12">
         
@@ -30,7 +30,17 @@
       
        </div>
         {% endif %}
+
+       <!-- search results -->
+        {% if search_results %}
+        <div class="col-12">
+            <h4 class="text-center">
+                    {{search_results}}
+                </h4>
+        </div>
+        {%endif%}
       
+        <!-- results -->
        {%for image in images %}
        <div class="col-md-4">
                 <div class="card mb-3" style="width: 100%;">

@@ -49,3 +49,14 @@ class ImageTestClass(TestCase):
         cloudinary_url_prefix = 'http://res.cloudinary.com/dtw9t2dom/image/upload/'
 
         self.assertEqual(self.updated_image.image.url, cloudinary_url_prefix+'newlink.png')
+
+
+
+    def test_search_category(self):
+        self.category.save()
+        self.location.save()
+        self.image.save()
+
+        self.search_results = Image.search_category('Race')
+
+        self.assertTrue( self.search_results.count() > 0 )
