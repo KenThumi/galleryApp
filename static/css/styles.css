@@ -208,3 +208,7 @@ img{
     border-radius: 0;
     border: 1px solid rgba(135,29,39,0.2)
 }
+
+.navbar-form label{
+    display: none;
+}

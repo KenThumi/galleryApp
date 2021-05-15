@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Image
-from .forms import ImageForm
+from .forms import ImageForm, FilterLocForm
 from django.contrib import messages
 import cloudinary
 import cloudinary.uploader
@@ -14,7 +14,10 @@ from django.http  import HttpResponse
 def home(request):
     images = Image.objects.all()
 
-    ctx = {'images':images}
+    form = FilterLocForm()
+
+    ctx = {'images':images,'search_loc_form':form}
+
     return render(request,'index.html', ctx)
 
 
@@ -94,12 +97,26 @@ def edit(request,image_id):
 
 
 def search_category(request):
-    # pass  #__contains
+
     if request.method=='POST':
 
         needle = request.POST['search']
 
         images=Image.search_category(needle)
+
+        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})'}
+
+    
+        return render(request,'index.html', ctx)
+
+    return redirect('home')
+
+
+def filter_by_location(request):
+    if request.method == 'POST':
+        needle = request.POST['location']
+
+        images = Image.filter_by_location(needle)
 
         ctx = {'images':images, 'search_results':f'Search Results ({images.count()})'}
 

@@ -7,5 +7,6 @@ urlpatterns=[
     path('',views.home,name = 'home'),
     path('upload',views.upload, name='upload'),
     path('edit/<int:image_id>',views.edit, name='edit'),
-    path('search_category',views.search_category, name='search_category')
+    path('search_category',views.search_category, name='search_category'),
+    path('filter_by_location',views.filter_by_location, name='filter_by_location')
 ]

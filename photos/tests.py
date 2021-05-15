@@ -60,3 +60,14 @@ class ImageTestClass(TestCase):
         self.search_results = Image.search_category('Race')
 
         self.assertTrue( self.search_results.count() > 0 )
+
+
+    def test_filter_by_location(self):
+        self.category.save()
+        self.location.save()
+        self.image.save()
+
+        self.filter_results = Image.filter_by_location(self.location)
+
+        self.assertTrue( self.filter_results.count() > 0 )
+

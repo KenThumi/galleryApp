@@ -34,6 +34,12 @@ class Image(models.Model):
 
         return results
 
+    @classmethod
+    def filter_by_location(cls,location):
+        results = cls.objects.filter(location=location)
+
+        return results
+
 
     def __str__(self):
         return f'Image: {self.name}'
