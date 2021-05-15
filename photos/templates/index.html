@@ -17,11 +17,12 @@
         <hr>
        </div>
       
+       {%for image in images %}
        <div class="col-md-4">
                 <div class="card mb-3" style="width: 100%;">
-                    <img class="img-fluid" data-toggle="modal" data-target="#modal-id"  src="https://res.cloudinary.com/dtw9t2dom/image/upload/v1620304410/tree_yekbkx.jpg" alt="lorem">
+                    <img class="img-fluid" data-toggle="modal" data-target="#modal-{{image.id}}"  src="{{image.image.url}}" alt="lorem">
                     <div class="card-body">
-                        <h4>Title</h4>
+                        <h4>{{image.name | title}}</h4>
                     </div>
                     <div class="card-footer">
                         <div class="row">
@@ -35,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <a href="#"  data-toggle="modal" data-target="#modal-id" >
+                                <a href="#"  data-toggle="modal" data-target="#modal-{{image.id}}" >
                                     <span class="text-center">
                                         More..  <i class="fas fa-expand-arrows-alt"></i>
                                     </span>
@@ -55,7 +56,7 @@
             </div>
             {% include '_image_modal.html' %}
        </div>
-     
+     {%endfor%}
       
    </div>
 </div>

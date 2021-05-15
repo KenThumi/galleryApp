@@ -1,11 +1,11 @@
 <!-- Modal -->
-<div class="modal fade" id="modal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="card mb-3" style="width: 100%;">
-            <img class="img-fluid" src="https://res.cloudinary.com/dtw9t2dom/image/upload/v1620304410/tree_yekbkx.jpg" alt="lorem">
+            <img class="img-fluid" src="{{image.image.url}}" alt="lorem">
             <div class="card-body">
-                <h4>Title</h4>
+                <h4>{{image.name|title}}</h4>
                 <p>Category: <strong>Lorem</strong></p>
                 <p>Location: <strong>Lorem</strong></p>  
             </div>
