@@ -2,6 +2,7 @@ from os import name
 import cloudinary
 from django.test import TestCase
 from .models import Image,Category,Location
+import pyperclip
 # Create your tests here.
 
 
@@ -70,4 +71,20 @@ class ImageTestClass(TestCase):
         self.filter_results = Image.filter_by_location(self.location)
 
         self.assertTrue( self.filter_results.count() > 0 )
+
+
+    def test_copy_image_url(self):
+        self.category.save()
+        self.location.save()
+        self.image.save()
+
+        self.image = Image.objects.get(pk=self.image.id)
+
+        self.image.copy_image_url()
+
+        cloudinary_url_prefix = 'http://res.cloudinary.com/dtw9t2dom/image/upload/'
+
+        self.assertEqual(pyperclip.paste(), cloudinary_url_prefix+'imageurl.png')
+
+
 

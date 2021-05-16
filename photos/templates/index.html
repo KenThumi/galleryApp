@@ -50,7 +50,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-3">
                                 <div class="text-center">
                                     <a href="{% url 'edit' image.id %}">
                                         <span class="text-center">
@@ -59,7 +59,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <a href="#"  data-toggle="modal" data-target="#modal-{{image.id}}" >
                                     <span class="text-center">
                                         More..  <i class="fas fa-expand-arrows-alt"></i>
@@ -67,7 +67,14 @@
                                 </a>
                               
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
+                                <a href="{% url 'copy_image_url' image.id%}"  >
+                                    <span class="text-center">
+                                        Link <i class="fas fa-copy ml-1"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-3">
                                 <a href="#">
                                     <span class="text-center">
                                         Delete <i class="fas fa-trash-alt ml-1"></i>

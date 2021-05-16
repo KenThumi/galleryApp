@@ -1,5 +1,6 @@
 from os import name
 from django.db import models
+import pyperclip
 
 # Create your models here.
 from cloudinary.models import CloudinaryField
@@ -39,6 +40,10 @@ class Image(models.Model):
         results = cls.objects.filter(location=location)
 
         return results
+
+    def copy_image_url(self):
+        return pyperclip.copy(self.image.url)
+
 
 
     def __str__(self):

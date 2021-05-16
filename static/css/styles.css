@@ -212,3 +212,7 @@ img{
 .navbar-form label{
     display: none;
 }
+
+.card-footer{
+    font-size: 12px;
+}

@@ -125,3 +125,13 @@ def filter_by_location(request):
 
     return redirect('home')
 
+
+def copy_image_url(request,image_id):
+    image = Image.objects.get(pk=int(image_id))
+
+    image.copy_image_url()
+
+    messages.success(request, 'Image URL copied successfully.')
+    
+    return redirect('home')
+
