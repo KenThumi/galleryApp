@@ -104,7 +104,9 @@ def search_category(request):
 
         images=Image.search_category(needle)
 
-        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})'}
+        form = FilterLocForm()
+
+        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})','search_loc_form':form}
 
     
         return render(request,'index.html', ctx)
@@ -118,7 +120,9 @@ def filter_by_location(request):
 
         images = Image.filter_by_location(needle)
 
-        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})'}
+        form = FilterLocForm()
+
+        ctx = {'images':images, 'search_results':f'Search Results ({images.count()})','search_loc_form':form}
 
     
         return render(request,'index.html', ctx)

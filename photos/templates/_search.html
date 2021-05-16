@@ -1,0 +1,39 @@
+{% load crispy_forms_tags %}
+<div class="col-12 my-2">
+    <!-- spacing -->
+</div>
+
+    <div class="col-md-6 hdn search-div">
+        <div class="float-left mr-2">
+            Filter By Location:
+        </div>
+        <form class="navbar-form float-left" role="search" action="{% url 'filter_by_location'%}" method="POST">
+                
+            <div class="input-group ">
+                {% csrf_token %}
+                {{ search_loc_form|crispy }}
+              <div class="input-group-btn">
+                <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+    
+          </form>
+    </div>
+    
+    <div class="col-md-6 hdn search-div">
+        <form class="navbar-form float-md-right" role="search" action="{% url 'search_category'%}" method="POST">
+    
+            <div class="input-group">
+                {% csrf_token %}
+              <input type="text" class="form-control " placeholder="Search Image by Category" name="search" required>
+              <div class="input-group-btn">
+                <button class="btn btn-success " type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+    
+          </form>
+    </div>
+
+    
+    
+

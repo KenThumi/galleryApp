@@ -15,3 +15,7 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
 });
+
+$('#search').click(function(){
+    $('.search-div').toggleClass('show');
+});

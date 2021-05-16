@@ -216,3 +216,11 @@ img{
 .card-footer{
     font-size: 12px;
 }
+
+.hdn{
+    display: none;
+}
+
+.show{
+    display:block;
+}
