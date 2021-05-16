@@ -87,4 +87,17 @@ class ImageTestClass(TestCase):
         self.assertEqual(pyperclip.paste(), cloudinary_url_prefix+'imageurl.png')
 
 
+    def test_delete_image(self):
+        self.category.save()
+        self.location.save()
+        self.image.save()
+
+        self.image = Image.objects.get(pk=self.image.id)
+
+        self.image.delete_image()
+
+        images = Image.objects.all()
+
+        self.assertTrue(images.count() == 0)
+
 

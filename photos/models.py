@@ -45,6 +45,12 @@ class Image(models.Model):
         return pyperclip.copy(self.image.url)
 
 
+    def delete_image(self):
+        return self.delete()
+
+
+
+
 
     def __str__(self):
         return f'Image: {self.name}'

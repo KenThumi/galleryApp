@@ -75,7 +75,7 @@
                                 </a>
                             </div>
                             <div class="col-3">
-                                <a href="#">
+                                <a href="{% url 'delete_image' image.id%}"   onclick="return confirm('Confirm Delete')">
                                     <span class="text-center">
                                         Delete <i class="fas fa-trash-alt ml-1"></i>
                                     </span>

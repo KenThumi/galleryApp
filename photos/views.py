@@ -135,3 +135,13 @@ def copy_image_url(request,image_id):
     
     return redirect('home')
 
+
+def delete_image(request,image_id):
+    image = Image.objects.get(pk=int(image_id))
+
+    image.delete_image()
+
+    messages.success(request, 'Image Deleted successfully.')
+    
+    return redirect('home')
+
