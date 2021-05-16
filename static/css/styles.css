@@ -198,11 +198,17 @@ a.article:hover {
 }
 
 
-img{
+.card img{
     cursor: pointer;
     height: 250px !important;
+    width: 100%;
 }
 
+@media(max-width:768px){
+    .card img{
+        height: 175px !important; 
+    }
+}
 
 .card{
     border-radius: 0;
@@ -223,4 +229,36 @@ img{
 
 .show{
     display:block;
+}
+
+
+
+@media(max-width:768px){
+    .d-sm-none{
+        display: none;
+    }
+}
+
+@media(min-width:769px){
+    .d-md-none{
+        display: block;
+    }
+}
+
+
+@media(max-width:900px){
+    .card-footer{
+        font-size: 9px;
+    }
+}
+
+.form-upload{
+    width: 70%;
+}
+
+
+@media(max-width:768px){
+    .form-upload{
+        width: 90%;
+    }
 }

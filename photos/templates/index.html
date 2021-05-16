@@ -63,7 +63,11 @@
                                 <div class="text-center">
                                     <a href="{% url 'edit' image.id %}">
                                         <span class="text-center">
-                                            Edit<i class="fas fa-edit ml-1"></i>
+                                           
+                                            <div class="d-sm-none d-md-block">
+                                                Edit
+                                            </div>
+                                            <i class="fas fa-edit ml-1"></i>
                                         </span>
                                     </a>
                                 </div>
@@ -71,7 +75,10 @@
                             <div class="col-3">
                                 <a  href="{% url 'get_image' image.id%}" target="_blank" >
                                     <span class="text-center">
-                                        More..  <i class="fas fa-expand-arrows-alt"></i>
+                                        <div class="d-sm-none d-md-block">
+                                            More..
+                                        </div> 
+                                        <i class="fas fa-expand-arrows-alt"></i>
                                     </span>
                                 </a>
                               
@@ -79,14 +86,21 @@
                             <div class="col-3">
                                 <a href="{% url 'copy_image_url' image.id%}"  >
                                     <span class="text-center">
-                                        Link <i class="fas fa-copy ml-1"></i>
+                                        <div class="d-sm-none d-md-block">
+                                            Link
+                                        </div>
+                                        <i class="fas fa-copy ml-1"></i>
                                     </span>
                                 </a>
                             </div>
                             <div class="col-3">
                                 <a href="{% url 'delete_image' image.id%}"   onclick="return confirm('Confirm Delete')">
                                     <span class="text-center">
-                                        Delete <i class="fas fa-trash-alt ml-1"></i>
+                                        <div class="d-sm-none d-md-block">
+                                            Delete
+                                        </div> 
+                                        
+                                        <i class="fas fa-trash-alt ml-1"></i>
                                     </span>
                                 </a>
                                
@@ -110,7 +124,7 @@
 <!-- copyrights -->
 <div class="mt-1 text-center">
     <small class="text-center">
-      Copyright © 2021 Gallery Inc. All Rights Reserved
+    Copyright © 2021 Gallery Inc. All Rights Reserved
     </small>
 </div>
 {% endblock %}
