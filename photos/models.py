@@ -60,12 +60,39 @@ class Image(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=60)
 
+
+    def save_category(self):
+        return self.save()
+
+    @classmethod
+    def update_category(cls,id,details):
+        return cls.objects.filter(id=int(id)).update(name=details['name'])
+
+
+    def delete_category(self):
+        return self.delete()
+    
+
     def __str__(self):
         return self.name
 
 
 class Location(models.Model):
     name = models.CharField(max_length=100)
+
+
+    def save_location(self):
+        return self.save()
+
+    @classmethod
+    def update_location(cls,id,details):
+        return cls.objects.filter(id=int(id)).update(name=details['name'])
+
+
+    def delete_location(self):
+        return self.delete()
+    
+
 
     def __str__(self):
         return self.name

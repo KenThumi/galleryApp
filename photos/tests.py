@@ -112,3 +112,95 @@ class ImageTestClass(TestCase):
 
 
 
+
+class CategoryTestClass(TestCase):
+    '''Tests all methods in Category class'''
+
+    def setUp(self):
+        self.category = Category(name='Race')
+       
+
+    def tearDown(self):
+        Category.objects.all().delete()
+       
+
+    def test_save_category(self):
+        self.category.save_category()
+
+        categories = Category.objects.all()
+
+        self.assertTrue( categories.count()> 0 )
+
+
+    def test_update_category(self):
+        self.category.save_category()
+
+        update_details = {'name':'Cat_edited'}
+
+        Category.update_category(self.category.id,update_details)
+
+        self.editedcategory = Category.objects.get(pk=self.category.id)
+
+
+        self.assertEqual(self.editedcategory.name,'Cat_edited')
+
+
+    def test_delete_category(self):
+        self.category.save_category()
+
+        self.cat = Category.objects.get(pk=self.category.id)
+
+        self.cat.delete_category()
+
+        categories = Category.objects.all()
+
+        self.assertEqual(categories.count(),0)
+
+
+
+class LocationTestClass(TestCase):
+    '''Tests all methods in Location class'''
+
+    def setUp(self):
+        self.location = Location(name='Spain')
+       
+
+    def tearDown(self):
+        Location.objects.all().delete()
+       
+
+    def test_save_location(self):
+        self.location.save_location()
+
+        locations = Location.objects.all()
+
+        self.assertTrue( locations.count()> 0 )
+
+
+    def test_update_location(self):
+        self.location.save_location()
+
+        update_details = {'name':'Croatia'}
+
+        Location.update_location(self.location.id,update_details)
+
+        self.editedlocation = Location.objects.get(pk=self.location.id)
+
+
+        self.assertEqual(self.editedlocation.name,'Croatia')
+
+
+    def test_delete_location(self):
+        self.location.save_location()
+
+        self.loc = Location.objects.get(pk=self.location.id)
+
+        self.loc.delete_location()
+
+        locations = Location.objects.all()
+
+        self.assertEqual(locations.count(),0)
+
+
+
+
