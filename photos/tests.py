@@ -101,3 +101,14 @@ class ImageTestClass(TestCase):
         self.assertTrue(images.count() == 0)
 
 
+    def test_get_image_by_id(self):
+        self.category.save()
+        self.location.save()
+        self.image.save()
+
+        self.result = Image.get_image_by_id(self.image.id) 
+
+        self.assertEqual(self.result.name,'Test Image')
+
+
+

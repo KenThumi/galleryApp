@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div class="container my-1">
+   <div class="row">      
+        <!-- results -->
+     
+       <div class="col-md-8 offset-md-2">
+                <div class="card mb-3" style="width: 100%;">
+                    <img class="img-fluid" data-toggle="modal" data-target="#modal-{{image.id}}"  src="{{image.image.url}}" alt="lorem">
+                    <div class="card-body">
+                        <h4>{{image.name | title}}</h4>
+                        <p>Category: <strong>{{image.category | title}}</strong></p>
+                        <p>Location: <strong>{{image.location | title}}</strong></p>  
+                        <p>
+                        {{image.description}}
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <a href="{% url 'edit' image.id %}">
+                                        <span >
+                                            Edit<i class="fas fa-edit ml-1"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                    
+                            <div class="col-4">
+                                <div class="text-center">
+                                     <a href="{% url 'copy_image_url' image.id%}"  >
+                                        <span class="text-center">
+                                            Link <i class="fas fa-copy ml-1"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                               
+                            </div>
+                            <div class="col-4">
+                                <div class="text-center">
+                                     <a href="{% url 'delete_image' image.id%}"   onclick="return confirm('Confirm Delete')">
+                                        <span class="text-center">
+                                            Delete <i class="fas fa-trash-alt ml-1"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                               
+                               
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+       </div>
+ 
+      
+   </div>
+</div>
+{% endblock %}

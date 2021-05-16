@@ -145,3 +145,11 @@ def delete_image(request,image_id):
     
     return redirect('home')
 
+
+def get_image_by_id(request,image_id):
+    image = Image.get_image_by_id(int(image_id))
+
+    ctx = {'image':image}
+
+    return render(request,'image.html',ctx)
+
