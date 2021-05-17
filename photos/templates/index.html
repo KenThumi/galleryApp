@@ -64,8 +64,9 @@
                                     <a href="{% url 'edit' image.id %}">
                                         <span class="text-center">
                                            
-                                            <div class="d-sm-none d-md-block">
-                                                Edit <i class="fas fa-edit ml-1"></i>
+                                            <div >
+                                                <span class="d-sm-none d-md-block"> Edit</span>
+                                                 <i class="fas fa-edit ml-1"></i>
                                             </div>
                                            
                                         </span>
@@ -73,10 +74,11 @@
                                 </div>
                             </div>
                             <div class="col-3">
-                                <a  href="{% url 'get_image' image.id%}" target="_blank" >
+                                <a  href="{% url 'get_image' image.id%}" target="_blank"   data-toggle="modal" data-target="#modal-{{image.id}}" >
                                     <span class="text-center">
-                                        <div class="d-sm-none d-md-block">
-                                            More..<i class="fas fa-expand-arrows-alt ml-1"></i>
+                                        <div>
+                                            <span class="d-sm-none d-md-block"> More..</span>
+                                            <i class="fas fa-expand-arrows-alt ml-1"></i>
                                         </div> 
                                         
                                     </span>
@@ -84,10 +86,11 @@
                               
                             </div>
                             <div class="col-3">
-                                <a href="{% url 'copy_image_url' image.id%}"  >
+                                <a href="#"  data-toggle="modal" data-target="#link-{{image.id}}" >
                                     <span class="text-center">
-                                        <div class="d-sm-none d-md-block">
-                                            Link <i class="fas fa-copy ml-1"></i>
+                                        <div>
+                                            <span class="d-sm-none d-md-block"> Link</span>
+                                            <i class="fas fa-link ml-1"></i>
                                         </div>
                                         
                                     </span>
@@ -96,8 +99,9 @@
                             <div class="col-3">
                                 <a href="{% url 'delete_image' image.id%}"   onclick="return confirm('Confirm Delete')">
                                     <span class="text-center">
-                                        <div class="d-sm-none d-md-block">
-                                            Delete <i class="fas fa-trash-alt ml-1"></i>
+                                        <div>
+                                            <span class="d-sm-none d-md-block"> Delete</span>
+                                            <i class="fas fa-trash-alt ml-1"></i>
                                         </div> 
                                         
                                         

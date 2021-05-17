@@ -32,7 +32,7 @@
                     
                             <div class="col-4">
                                 <div class="text-center">
-                                     <a href="{% url 'copy_image_url' image.id%}"  >
+                                     <a href="#"  data-toggle="modal" data-target="#link-{{image.id}}"  >
                                         <span class="text-center">
                                             Link <i class="fas fa-copy ml-1"></i>
                                         </span>
@@ -60,4 +60,5 @@
       
    </div>
 </div>
+{% include '_image_modal.html' %}
 {% endblock %}
