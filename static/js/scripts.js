@@ -21,7 +21,7 @@ $('#search').click(function(){
 });
 
 // copy mechanism
-function copyLink(element) {
+function copyLink(element){
     var copyText = document.getElementById(element);
     copyText.select();
     copyText.setSelectionRange(0, 99999)
